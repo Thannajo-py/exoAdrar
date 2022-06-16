@@ -7,7 +7,9 @@ Vue.createApp({
         tasks: [],
         valeurDeInput: '',
         variable1: '',
-        variable2: [1,2,3]
+        variable2: [1,2,3],
+        variable3: '',
+        testMethod: ()=>{return 1}
       };
     },
     // Dans cet Object methods, on va écrire nos fonctions
@@ -15,12 +17,11 @@ Vue.createApp({
       ajouterTask() {
         this.tasks.push(this.valeurDeInput);
         this.valeurDeInput = '';
-        
       },
-      test:()=> {
+      test:function() {
         let rand = Math.random()
-        if (rand > 0.5) return "loose"
-        return "win"
+        if (rand > 0.5) this.variable3="loose"
+        else this.variable3 = "win"
       }
       
     },

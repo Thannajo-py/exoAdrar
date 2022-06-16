@@ -22,7 +22,7 @@
           <img :src="people.image.src" :alt="people.image.alt">
         </div>
         <h2>{{people.firstName}}</h2>
-        <h2>{{people.lastName}}</h2>
+        <input v-model="people.firstName"/>
         <h2>{{people.getAge()}}</h2>
         <h2>age + 10 = {{people.getOlder()}}</h2>
         <h2>Nb Random = {{people.getRandom()}}</h2>

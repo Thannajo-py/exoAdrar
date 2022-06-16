@@ -11,7 +11,8 @@ Vue.createApp({
     methods: {
       initPeople: function(){
         return{
-          age:0,
+          age:-1,
+          random:null,
           image:{
             src:"https://picsum.photos/200/300",
             alt: "une image"
@@ -19,14 +20,15 @@ Vue.createApp({
           firstName: "mario",
           lastName: "mario",
           getAge: function(){
-            this.age = parseInt(Math.random() * 100)
+            if (this.age < 0)this.age = parseInt(Math.random() * 100)
             return `${this.age} ans`
           },
           getOlder: function(){
             return `${this.age + 10} ans`
           },
           getRandom: ()=>{
-            return Math.random()
+            if(!this.random) this.random = Math.random()
+            return this.random
           },
         }
       

@@ -17,6 +17,11 @@ Vue.createApp({
         this.valeurDeInput = '';
         
       },
+      test:()=> {
+        let rand = Math.random()
+        if (rand > 0.5) return "loose"
+        return "win"
+      }
       
     },
     // L'application est montée sur la balise HTML qui possède l'id app

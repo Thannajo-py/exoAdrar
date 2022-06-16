@@ -9,17 +9,34 @@
 <body>
     <input type="text" id="inputTodo">
     <button type="button" id="btnAdd">ADD</button>
+    <button type="button" id="btnReset">RESET</button>
     <ul id="ulTodo"></ul>
 </body>
 <script>
     let inputTodo = document.getElementById('inputTodo')
     let ulTodo =  document.getElementById('ulTodo')
-    document.getElementById('btnAdd').addEventListener('click', ()=>{
-        let text = inputTodo.value
+    const addLi = (text)=>{
         let newLi = document.createElement('li')
         newLi.innerHTML = text
         ulTodo.append(newLi)
-
+    }
+    let allTodo = {
+        list:[]
+    }
+    let mem = localStorage.getItem('allTodo')
+    if(mem) allTodo = JSON.parse(mem)
+    allTodo.list.forEach((val)=>{
+        addLi(val)
+    })
+    document.getElementById('btnAdd').addEventListener('click', ()=>{
+        let text = inputTodo.value
+        addLi(text)
+        allTodo.list.push(text)
+        localStorage.setItem("allTodo", JSON.stringify(allTodo))
+        inputTodo.value = ""
+    })
+    document.getElementById('btnReset').addEventListener('click', ()=>{
+        localStorage.removeItem('allTodo')
     })
 </script>
 </html>

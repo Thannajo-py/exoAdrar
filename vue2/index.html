@@ -15,10 +15,17 @@
   </head>
   <!-- On place un id sur la partie du template que l'on veut ctrl avec VUE (ici vue a le ctrl sur le body) -->
   <body id="app">
+    <h1 class="text-center">TP-DATABINDING-PROFILE USER</h1>
     <div class="card text-center">
       <div class="card-body">
-        <h2>Event BINDING</h2>
-        <button type="button" class="btn btn-danger" v-on:click="nombreMoins()">-</button>le nombre:{{getNombre()}}<button type="button" class="btn btn-success" v-on:click="nombrePlus()">+</button>
+        <div class="text-center">
+          <img :src="people.image.src" :alt="people.image.alt">
+        </div>
+        <h2>{{people.firstName}}</h2>
+        <input v-model="people.firstName"/>
+        <h2>{{people.getAge()}}</h2>
+        <h2>age + 10 = {{people.getOlder()}}</h2>
+        <h2>Nb Random = {{people.getRandom()}}</h2>
         
       </div>
     </div>

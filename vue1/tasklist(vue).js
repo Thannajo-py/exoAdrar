@@ -4,7 +4,6 @@ Vue.createApp({
     //Toutes les data seront contenues dans this
     data() {
       return {
-        age: 0,
         people: this.initPeople()
       };
     },
@@ -12,6 +11,7 @@ Vue.createApp({
     methods: {
       initPeople: function(){
         return{
+          age:0,
           image:{
             src:"https://picsum.photos/200/300",
             alt: "une image"
@@ -27,9 +27,8 @@ Vue.createApp({
           },
           getRandom: ()=>{
             return Math.random()
-          }
-
-      }
+          },
+        }
       
       },
     }

@@ -15,14 +15,13 @@
   </head>
   <!-- On place un id sur la partie du template que l'on veut ctrl avec VUE (ici vue a le ctrl sur le body) -->
   <body id="app">
-    <h1 class="text-center">TP-input</h1>
+    <h1 class="text-center">TP-BUG FUNCTION</h1>
     <div class="card text-center">
       <div class="card-body">
-        <input type="text" v-model="input1" v-on:keyup="this.p2 = this.input1" >
-        <p>{{p2}}</p>
-        <input type="text" v-model="input2" v-on:keyup.esc="refreshP">
-        <p>{{p}}</p>
-        <button type="button" v-on:click="alert2">TEST</button>
+      <button type="button" class="btn btn-danger" @click="--counter">-</button>
+      <button type="button" class="btn btn-success" @click="++counter">+</button>
+      {{counter}}  
+      {{getUserName()}}
       </div>
     </div>
     <!-- script pour contacter VUE -->

@@ -4,20 +4,16 @@ Vue.createApp({
     //Toutes les data seront contenues dans this
     data() {
       return {
-        input1:"",
-        input2:"",
-        p:"",
-        p2: ""
+        counter:0,
+        username:""
       };
     },
     // Dans cet Object methods, on va écrire nos fonctions
     methods: {
-      alert2: ()=>{
-        alert("alert")
-      },
-      refreshP: function(){
-        console.log('here')
-        this.p = this.input2
+      getUserName(){
+        console.log("fonction executée")
+        if(!this.username) return "test"
+        return "un autre test"
       }
     }
     // L'application est montée sur la balise HTML qui possède l'id app

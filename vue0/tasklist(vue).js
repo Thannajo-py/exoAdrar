@@ -8,7 +8,7 @@ Vue.createApp({
         valeurDeInput: '',
         variable1: '',
         variable2: [1,2,3],
-        variable3: '',
+        variable3: this.initVariable3(),
         testMethod: ()=>{return 1}
       };
     },
@@ -19,9 +19,12 @@ Vue.createApp({
         this.valeurDeInput = '';
       },
       test:function() {
+        this.variable3 = this.initVariable3()
+      },
+      initVariable3:function(){
         let rand = Math.random()
-        if (rand > 0.5) this.variable3="loose"
-        else this.variable3 = "win"
+        if (rand > 0.5) return this.variable3="loose"
+        else return this.variable3 = "win"
       }
       
     },

@@ -36,8 +36,8 @@
           <!-- la directive v-for, sur la <li> va permettre de répéter l'affichage de <li> autant de fois que des data sont présentes dans le tableau tasks (côté JS)  -->
           <!-- cette syntaxe en double accolades {{uneTask}} permet d'afficher une variable(JS) directement -->
           
-          <li v-for="uneTask in tasks">{{uneTask}}</li>
-          <li v-for="v in variable2">{{v}}</li>
+          <li v-for="uneTask of tasks">{{uneTask}}</li>
+          <li v-if="valeurDeInput == ''" v-for="v in variable2">{{v}}</li>
         </ul>
       </div>
     </div>
